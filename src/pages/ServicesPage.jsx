@@ -18,6 +18,7 @@ import {
 import { servicesPage } from "../content"
 import ImageBanner from "../components/ImageBanner"
 import threatDetection from "../assets/images/threat-detection.webp"
+import customerSupport from "../assets/images/customer-support.webp"
 
 const consultingIcons = { Compass, CloudCog, ShieldCheck, BarChart3, Settings2, Sparkles }
 const collabIcons = { Handshake, Users2, GraduationCap }
@@ -58,23 +59,29 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative overflow-hidden rounded-3xl border border-(--glass)/10 bg-gradient-to-br from-(--glass)/[0.05] to-(--glass)/[0.02] p-8 backdrop-blur-xl"
+              className="relative overflow-hidden rounded-3xl border border-(--glass)/10 p-8"
             >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/15 blur-[100px]"
+              <img
+                src={customerSupport}
+                alt="Support team ready to help"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <h2 className="text-lg font-semibold text-fg">{servicesPage.cta.eyebrow}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-                {servicesPage.cta.body}
-              </p>
-              <Link
-                to={servicesPage.cta.href}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-2 px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
-              >
-                {servicesPage.cta.label}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
+
+              <div className="relative">
+                <h2 className="text-lg font-semibold text-white">{servicesPage.cta.eyebrow}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-white/80">
+                  {servicesPage.cta.body}
+                </p>
+                <Link
+                  to={servicesPage.cta.href}
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-2 px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
+                >
+                  {servicesPage.cta.label}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>

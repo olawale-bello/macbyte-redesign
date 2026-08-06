@@ -14,6 +14,7 @@ import {
 import { solutionsPage } from "../content"
 import ImageBanner from "../components/ImageBanner"
 import fiberNetwork from "../assets/images/fiber-network.webp"
+import threatDetection from "../assets/images/threat-detection.webp"
 
 const icons = { MailWarning, CloudCog, ShieldAlert, Laptop, Settings2, ClipboardCheck, Layers }
 
@@ -81,6 +82,7 @@ export default function SolutionsPage() {
             >
               {group.items.map((item, i) => {
                 const Icon = icons[item.icon]
+                const withImage = item.icon === "MailWarning"
                 return (
                   <motion.div
                     key={item.title}
@@ -88,23 +90,37 @@ export default function SolutionsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.4, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                    className="rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-(--glass)/20 hover:bg-(--glass)/[0.06] lg:p-8"
+                    className={`rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] backdrop-blur-xl transition-colors duration-300 hover:border-(--glass)/20 hover:bg-(--glass)/[0.06] ${
+                      withImage ? "overflow-hidden lg:flex lg:items-center" : "p-6 lg:p-8"
+                    }`}
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-(--glass)/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2">
-                      <Icon className="h-6 w-6" strokeWidth={1.75} />
+                    <div className={withImage ? "p-6 lg:flex-1 lg:p-8" : ""}>
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-(--glass)/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2">
+                        <Icon className="h-6 w-6" strokeWidth={1.75} />
+                      </div>
+                      <h3 className="mt-5 text-lg font-semibold text-fg">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-fg-muted">
+                        {item.description}
+                      </p>
+                      <ul className="mt-5 space-y-2.5 border-t border-(--glass)/10 pt-5">
+                        {item.benefits.map((benefit) => (
+                          <li key={benefit} className="flex gap-2.5 text-sm leading-relaxed text-fg-muted">
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2} />
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <h3 className="mt-5 text-lg font-semibold text-fg">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                      {item.description}
-                    </p>
-                    <ul className="mt-5 space-y-2.5 border-t border-(--glass)/10 pt-5">
-                      {item.benefits.map((benefit) => (
-                        <li key={benefit} className="flex gap-2.5 text-sm leading-relaxed text-fg-muted">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2} />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
+                    {withImage && (
+                      <div className="relative h-48 lg:h-full lg:w-2/5 lg:shrink-0">
+                        <img
+                          src={threatDetection}
+                          alt="Security analyst monitoring threat detection dashboards"
+                          loading="lazy"
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      </div>
+                    )}
                   </motion.div>
                 )
               })}
