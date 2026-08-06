@@ -17,7 +17,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-success" />
             {hero.eyebrow}
           </div>
@@ -40,7 +40,7 @@ export default function Hero() {
             </a>
             <a
               href="#services"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.08] px-6 py-3.5 text-sm font-semibold text-fg backdrop-blur transition-colors duration-200 hover:border-white/30 hover:bg-white/[0.14]"
+              className="inline-flex items-center gap-2 rounded-full border border-(--glass)/20 bg-(--glass)/[0.08] px-6 py-3.5 text-sm font-semibold text-fg backdrop-blur transition-colors duration-200 hover:border-(--glass)/30 hover:bg-(--glass)/[0.14]"
             >
               {hero.secondaryCta}
             </a>

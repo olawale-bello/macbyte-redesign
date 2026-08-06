@@ -33,7 +33,7 @@ export default function About() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary-2" />
             {about.eyebrow}
           </div>
@@ -56,8 +56,8 @@ export default function About() {
                 transition={{ duration: 0.4, delay: (i % 4) * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${spans[i]} ${
                   featured
-                    ? "border-white/10 bg-gradient-to-br from-primary-2/15 via-primary/10 to-accent/10 hover:border-white/20"
-                    : "border-white/8 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]"
+                    ? "border-(--glass)/10 bg-gradient-to-br from-primary-2/15 via-primary/10 to-accent/10 hover:border-(--glass)/20"
+                    : "border-(--glass)/8 bg-(--glass)/[0.03] hover:border-(--glass)/20 hover:bg-(--glass)/[0.06]"
                 }`}
               >
                 <div
@@ -66,7 +66,7 @@ export default function About() {
                 />
 
                 <div
-                  className={`flex items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2 transition-transform duration-300 group-hover:scale-110 ${
+                  className={`flex items-center justify-center rounded-xl border border-(--glass)/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2 transition-transform duration-300 group-hover:scale-110 ${
                     featured ? "h-14 w-14" : "h-12 w-12"
                   }`}
                 >

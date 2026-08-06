@@ -19,7 +19,7 @@ export default function AboutUsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-primary-2" />
               {aboutPage.eyebrow}
             </div>
@@ -41,7 +41,7 @@ export default function AboutUsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-xl lg:p-10"
+            className="relative overflow-hidden rounded-3xl border border-(--glass)/10 bg-gradient-to-br from-(--glass)/[0.05] to-(--glass)/[0.02] p-8 backdrop-blur-xl lg:p-10"
           >
             <div
               aria-hidden
@@ -51,7 +51,7 @@ export default function AboutUsPage() {
             <p className="mt-4 text-xl font-medium leading-relaxed text-fg sm:text-2xl">
               {aboutPage.philosophy}
             </p>
-            <div className="mt-8 flex items-start gap-3 border-t border-white/10 pt-6">
+            <div className="mt-8 flex items-start gap-3 border-t border-(--glass)/10 pt-6">
               <Users2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.75} />
               <p className="text-sm leading-relaxed text-fg-muted">{aboutPage.clientBase}</p>
             </div>
@@ -82,7 +82,7 @@ export default function AboutUsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.4, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  className="rounded-2xl border border-white/8 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.06]"
+                  className="rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-(--glass)/20 hover:bg-(--glass)/[0.06]"
                 >
                   <Icon className="h-6 w-6 text-accent" strokeWidth={1.75} />
                   <h3 className="mt-4 text-base font-semibold text-fg">{pillar.title}</h3>
@@ -107,12 +107,12 @@ export default function AboutUsPage() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               Leadership
             </div>
 
-            <div className="relative mt-6 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-xl lg:p-12">
+            <div className="relative mt-6 overflow-hidden rounded-3xl border border-(--glass)/10 bg-gradient-to-br from-(--glass)/[0.05] to-(--glass)/[0.02] p-8 backdrop-blur-xl lg:p-12">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-primary/20 blur-[110px]"
@@ -125,7 +125,7 @@ export default function AboutUsPage() {
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
                     <h2 className="text-xl font-semibold text-fg">{aboutPage.leader.name}</h2>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-fg-muted">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-3 py-1 text-xs font-medium text-fg-muted">
                       <Medal className="h-3.5 w-3.5 text-accent" />
                       {aboutPage.leader.title}
                     </span>
@@ -138,7 +138,7 @@ export default function AboutUsPage() {
                     {["Military service", "Law enforcement", "Strategic precision"].map((tag) => (
                       <div
                         key={tag}
-                        className="rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3 text-center text-xs font-medium text-fg-muted"
+                        className="rounded-xl border border-(--glass)/8 bg-(--glass)/[0.03] px-4 py-3 text-center text-xs font-medium text-fg-muted"
                       >
                         {tag}
                       </div>

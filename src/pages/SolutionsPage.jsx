@@ -31,7 +31,7 @@ export default function SolutionsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               {solutionsPage.eyebrow}
             </div>
@@ -88,16 +88,16 @@ export default function SolutionsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.4, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                    className="rounded-2xl border border-white/8 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.06] lg:p-8"
+                    className="rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-(--glass)/20 hover:bg-(--glass)/[0.06] lg:p-8"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-(--glass)/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2">
                       <Icon className="h-6 w-6" strokeWidth={1.75} />
                     </div>
                     <h3 className="mt-5 text-lg font-semibold text-fg">{item.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-fg-muted">
                       {item.description}
                     </p>
-                    <ul className="mt-5 space-y-2.5 border-t border-white/10 pt-5">
+                    <ul className="mt-5 space-y-2.5 border-t border-(--glass)/10 pt-5">
                       {item.benefits.map((benefit) => (
                         <li key={benefit} className="flex gap-2.5 text-sm leading-relaxed text-fg-muted">
                           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2} />
@@ -123,7 +123,7 @@ export default function SolutionsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex items-center gap-6 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-primary/15 via-primary-2/10 to-accent/10 p-6 backdrop-blur-xl sm:p-8"
+            className="relative flex items-center gap-6 overflow-hidden rounded-2xl border border-(--glass)/10 bg-gradient-to-r from-primary/15 via-primary-2/10 to-accent/10 p-6 backdrop-blur-xl sm:p-8"
           >
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary-2 text-white shadow-glow">
               <Layers className="h-7 w-7" strokeWidth={1.75} />
@@ -145,7 +145,7 @@ export default function SolutionsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mt-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 text-center backdrop-blur-xl"
+            className="relative mt-10 overflow-hidden rounded-3xl border border-(--glass)/10 bg-gradient-to-br from-(--glass)/[0.05] to-(--glass)/[0.02] p-8 text-center backdrop-blur-xl"
           >
             <p className="text-base leading-relaxed text-fg-muted">{solutionsPage.cta.body}</p>
             <Link

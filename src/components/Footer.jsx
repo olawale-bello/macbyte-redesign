@@ -14,7 +14,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative border-t border-white/10">
+    <footer className="relative border-t border-(--glass)/10">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           <div>
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-white/8 bg-white/[0.03] p-6 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm font-medium text-fg">{newsletter.body}</p>
           {subscribed ? (
             <div className="flex items-center gap-2 text-sm text-success">
@@ -66,7 +66,7 @@ export default function Footer() {
                 type="email"
                 required
                 placeholder="you@company.com"
-                className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
+                className="w-full rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-2.5 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
               />
               <button
                 type="submit"
@@ -79,7 +79,7 @@ export default function Footer() {
           )}
         </div>
 
-        <div className="mt-8 border-t border-white/10 pt-6">
+        <div className="mt-8 border-t border-(--glass)/10 pt-6">
           <p className="text-xs text-fg-subtle">{footer.copyright}</p>
         </div>
       </div>

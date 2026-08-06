@@ -5,7 +5,7 @@ import { testimonials } from "../content"
 export default function Testimonials() {
   return (
     <section id="testimonials" className="relative py-24 lg:py-32">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-(--glass)/10 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
@@ -15,7 +15,7 @@ export default function Testimonials() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             {testimonials.eyebrow}
           </div>
@@ -32,7 +32,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.45, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-xl"
+              className="relative overflow-hidden rounded-3xl border border-(--glass)/10 bg-gradient-to-br from-(--glass)/[0.05] to-(--glass)/[0.02] p-8 backdrop-blur-xl"
             >
               <div
                 aria-hidden
@@ -50,7 +50,7 @@ export default function Testimonials() {
 
               <p className="mt-5 text-base leading-relaxed text-fg">"{review.quote}"</p>
 
-              <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+              <div className="mt-6 flex items-center justify-between border-t border-(--glass)/10 pt-5">
                 <div>
                   <p className="text-sm font-semibold text-fg">{review.author}</p>
                   <p className="text-sm text-fg-muted">

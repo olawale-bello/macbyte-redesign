@@ -7,7 +7,7 @@ export default function ImageBanner({ src, alt, caption, body, aspect = "aspect-
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative overflow-hidden rounded-3xl border border-white/10 ${aspect}`}
+      className={`relative overflow-hidden rounded-3xl border border-(--glass)/10 ${aspect}`}
     >
       <img
         src={src}
@@ -15,7 +15,7 @@ export default function ImageBanner({ src, alt, caption, body, aspect = "aspect-
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/50 to-bg/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/10 mix-blend-overlay" />
       {(caption || body) && (
         <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">

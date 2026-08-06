@@ -21,7 +21,7 @@ export default function Visuals() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {visuals.eyebrow}
           </div>
@@ -38,7 +38,7 @@ export default function Visuals() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10"
+              className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-(--glass)/10"
             >
               <img
                 src={images[item.image]}
@@ -46,7 +46,7 @@ export default function Visuals() {
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
                 <h3 className="text-lg font-semibold text-white">{item.caption}</h3>
                 <p className="mt-1.5 max-w-sm text-sm leading-relaxed text-white/80">

@@ -11,6 +11,7 @@
   --color-surface-hover: rgba(255, 255, 255, 0.07);
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-grid-line: rgba(255, 255, 255, 0.05);
 
   /* Text */
   --color-fg: #f1f5f9;
@@ -29,6 +30,33 @@
   --shadow-glow-cyan: 0 0 0 1px rgba(34, 211, 238, 0.15), 0 8px 40px -8px rgba(34, 211, 238, 0.3);
 }
 
+/* Tint used for "glass" overlays (border-(--glass)/N, bg-(--glass)/N, etc).
+   White in dark mode, dark slate in light mode — flips every glass surface
+   in one place instead of needing per-component light variants. */
+:root {
+  --glass: #ffffff;
+}
+
+:root[data-theme="light"] {
+  --color-bg: #f7f8fb;
+  --color-bg-elevated: #eef0f6;
+  --color-surface: rgba(15, 23, 42, 0.035);
+  --color-surface-hover: rgba(15, 23, 42, 0.06);
+  --color-border: rgba(15, 23, 42, 0.1);
+  --color-border-strong: rgba(15, 23, 42, 0.18);
+  --color-grid-line: rgba(15, 23, 42, 0.06);
+
+  --color-fg: #0f172a;
+  --color-fg-muted: #475569;
+  --color-fg-subtle: #94a3b8;
+
+  --color-ring: #4f46e5;
+
+  --glass: #0f172a;
+
+  color-scheme: light;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -44,6 +72,7 @@
     color: var(--color-fg);
     font-feature-settings: "ss01";
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   ::selection {
@@ -59,10 +88,14 @@
     color: transparent;
   }
 
+  :root[data-theme="light"] .text-gradient {
+    background-image: linear-gradient(90deg, #4338ca, #7c3aed 45%, #0e7490);
+  }
+
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
     background-size: 56px 56px;
   }
 

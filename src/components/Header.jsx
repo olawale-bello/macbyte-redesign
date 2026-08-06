@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { ShieldCheck, Menu, X } from "lucide-react"
 import { brand, nav } from "../content"
+import ThemeToggle from "./ThemeToggle"
 
 const toPath = (href) => (href.startsWith("#") ? `/${href}` : href)
 
@@ -20,7 +21,7 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-bg/80 backdrop-blur-xl"
+          ? "border-b border-(--glass)/10 bg-bg/80 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -44,35 +45,39 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Link
-            to={toPath(nav.ctaHref)}
-            className="cursor-pointer rounded-full bg-gradient-to-r from-primary to-primary-2 px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
-          >
-            {nav.cta}
-          </Link>
-        </div>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
 
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="cursor-pointer rounded-lg p-2 text-fg lg:hidden"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          <div className="hidden lg:block">
+            <Link
+              to={toPath(nav.ctaHref)}
+              className="cursor-pointer rounded-full bg-gradient-to-r from-primary to-primary-2 px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
+            >
+              {nav.cta}
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="cursor-pointer rounded-lg p-2 text-fg lg:hidden"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-bg/95 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-(--glass)/10 bg-bg/95 backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col gap-1 px-6 py-4">
             {nav.links.map((link) => (
               <Link
                 key={link.href}
                 to={toPath(link.href)}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-sm font-medium text-fg-muted hover:bg-white/5 hover:text-fg"
+                className="rounded-lg px-2 py-3 text-sm font-medium text-fg-muted hover:bg-(--glass)/5 hover:text-fg"
               >
                 {link.label}
               </Link>

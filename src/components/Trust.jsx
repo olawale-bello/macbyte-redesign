@@ -8,7 +8,7 @@ const pillarIcons = [ShieldCheck, Fingerprint, Compass]
 export default function Trust() {
   return (
     <section id="trust" className="relative py-24 lg:py-32">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-(--glass)/10 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
@@ -18,7 +18,7 @@ export default function Trust() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {trust.eyebrow}
           </div>
@@ -39,7 +39,7 @@ export default function Trust() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-2xl border border-white/8 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.06]"
+                className="rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-(--glass)/20 hover:bg-(--glass)/[0.06]"
               >
                 <Icon className="h-6 w-6 text-accent" strokeWidth={1.75} />
                 <h3 className="mt-4 text-base font-semibold text-fg">{pillar.title}</h3>
@@ -60,7 +60,7 @@ export default function Trust() {
         >
           <Link
             to={trust.learnMore.href}
-            className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-fg backdrop-blur transition-colors duration-200 hover:border-white/25 hover:bg-white/10"
+            className="group inline-flex items-center gap-2 rounded-full border border-(--glass)/15 bg-(--glass)/5 px-6 py-3 text-sm font-semibold text-fg backdrop-blur transition-colors duration-200 hover:border-(--glass)/25 hover:bg-(--glass)/10"
           >
             {trust.learnMore.text}
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />

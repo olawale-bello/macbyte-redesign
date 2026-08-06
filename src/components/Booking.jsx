@@ -29,7 +29,7 @@ export default function Booking() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {booking.eyebrow}
           </div>
@@ -44,7 +44,7 @@ export default function Booking() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto mt-12 max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-xl lg:p-10"
+          className="relative mx-auto mt-12 max-w-2xl overflow-hidden rounded-3xl border border-(--glass)/10 bg-gradient-to-br from-(--glass)/[0.05] to-(--glass)/[0.02] p-8 backdrop-blur-xl lg:p-10"
         >
           {status === "confirmed" ? (
             <div className="flex min-h-[320px] flex-col items-center justify-center text-center">
@@ -56,7 +56,7 @@ export default function Booking() {
               <button
                 type="button"
                 onClick={() => setStatus("idle")}
-                className="mt-6 cursor-pointer rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-fg hover:bg-white/10"
+                className="mt-6 cursor-pointer rounded-full border border-(--glass)/15 bg-(--glass)/5 px-5 py-2.5 text-sm font-semibold text-fg hover:bg-(--glass)/10"
               >
                 Book another slot
               </button>
@@ -71,7 +71,7 @@ export default function Booking() {
                   id="booking-service"
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="mt-2 w-full cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-fg outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
+                  className="mt-2 w-full cursor-pointer rounded-xl border border-(--glass)/10 bg-(--glass)/5 px-4 py-3 text-sm text-fg outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
                 >
                   {services.map((s) => (
                     <option key={s.title} value={s.title} className="bg-bg-elevated">
@@ -95,7 +95,7 @@ export default function Booking() {
                       className={`cursor-pointer rounded-xl border px-3 py-2.5 text-sm font-medium transition-colors duration-200 ${
                         day === d
                           ? "border-primary-2/60 bg-primary-2/20 text-fg"
-                          : "border-white/10 bg-white/5 text-fg-muted hover:bg-white/10"
+                          : "border-(--glass)/10 bg-(--glass)/5 text-fg-muted hover:bg-(--glass)/10"
                       }`}
                     >
                       {d}
@@ -118,7 +118,7 @@ export default function Booking() {
                       className={`cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200 ${
                         time === t
                           ? "border-primary-2/60 bg-primary-2/20 text-fg"
-                          : "border-white/10 bg-white/5 text-fg-muted hover:bg-white/10"
+                          : "border-(--glass)/10 bg-(--glass)/5 text-fg-muted hover:bg-(--glass)/10"
                       }`}
                     >
                       {t}

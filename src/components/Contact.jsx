@@ -51,7 +51,7 @@ export default function Contact() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-(--glass)/10 bg-(--glass)/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             {contact.eyebrow}
           </div>
@@ -93,7 +93,7 @@ export default function Contact() {
               <a
                 key={label}
                 href={href}
-                className="rounded-2xl border border-white/8 bg-white/[0.03] p-6 text-center backdrop-blur-xl transition-colors duration-200 hover:border-white/20 hover:bg-white/[0.06]"
+                className="rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 text-center backdrop-blur-xl transition-colors duration-200 hover:border-(--glass)/20 hover:bg-(--glass)/[0.06]"
               >
                 <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2">
                   <Icon className="h-5 w-5" strokeWidth={1.75} />
@@ -104,7 +104,7 @@ export default function Contact() {
             ) : (
               <div
                 key={label}
-                className="rounded-2xl border border-white/8 bg-white/[0.03] p-6 text-center backdrop-blur-xl"
+                className="rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 text-center backdrop-blur-xl"
               >
                 <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2">
                   <Icon className="h-5 w-5" strokeWidth={1.75} />
@@ -128,7 +128,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto mt-14 max-w-xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-xl lg:p-10"
+          className="relative mx-auto mt-14 max-w-xl overflow-hidden rounded-3xl border border-(--glass)/10 bg-gradient-to-br from-(--glass)/[0.05] to-(--glass)/[0.02] p-8 backdrop-blur-xl lg:p-10"
         >
           {status === "submitted" ? (
             <div className="flex min-h-[360px] flex-col items-center justify-center text-center">
@@ -141,7 +141,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={() => setStatus("idle")}
-                className="mt-6 cursor-pointer rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-fg hover:bg-white/10"
+                className="mt-6 cursor-pointer rounded-full border border-(--glass)/15 bg-(--glass)/5 px-5 py-2.5 text-sm font-semibold text-fg hover:bg-(--glass)/10"
               >
                 Send another message
               </button>
@@ -161,7 +161,7 @@ export default function Contact() {
                     autoComplete="name"
                     value={form.name}
                     onChange={handleChange}
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
+                    className="mt-2 w-full rounded-xl border border-(--glass)/10 bg-(--glass)/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
                     placeholder="Jane Smith"
                   />
                 </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                     autoComplete="organization"
                     value={form.company}
                     onChange={handleChange}
-                    className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
+                    className="mt-2 w-full rounded-xl border border-(--glass)/10 bg-(--glass)/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
                     placeholder="Your business"
                   />
                 </div>
@@ -194,7 +194,7 @@ export default function Contact() {
                   autoComplete="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
+                  className="mt-2 w-full rounded-xl border border-(--glass)/10 bg-(--glass)/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
                   placeholder="jane@company.com"
                 />
               </div>
@@ -210,7 +210,7 @@ export default function Contact() {
                   rows={4}
                   value={form.message}
                   onChange={handleChange}
-                  className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
+                  className="mt-2 w-full resize-none rounded-xl border border-(--glass)/10 bg-(--glass)/5 px-4 py-3 text-sm text-fg placeholder:text-fg-subtle outline-none transition-colors duration-200 focus:border-primary-2 focus:ring-2 focus:ring-primary-2/30"
                   placeholder="Tell us about your security needs..."
                 />
               </div>
