@@ -2,6 +2,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Mail, Clock, Send, CheckCircle2, Headset } from "lucide-react"
 import { contact } from "../content"
+import ImageBanner from "./ImageBanner"
+import customerSupport from "../assets/images/customer-support.webp"
 
 export default function Contact() {
   const [status, setStatus] = useState("idle")
@@ -38,7 +40,17 @@ export default function Contact() {
             </h2>
             <p className="mt-4 max-w-md text-lg leading-relaxed text-fg-muted">{contact.body}</p>
 
-            <div className="mt-10 space-y-4">
+            <div className="mt-8">
+              <ImageBanner
+                src={customerSupport}
+                alt="Support team assisting clients"
+                aspect="aspect-[16/9]"
+                caption="A team that actually picks up"
+                body="Real people ready to help, not a ticket queue that goes quiet."
+              />
+            </div>
+
+            <div className="mt-8 space-y-4">
               <a
                 href={`mailto:${contact.email}`}
                 className="flex items-center gap-4 rounded-2xl border border-white/8 bg-white/[0.03] p-5 backdrop-blur-xl transition-colors duration-200 hover:border-white/20 hover:bg-white/[0.06]"

@@ -12,6 +12,8 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { solutionsPage } from "../content"
+import ImageBanner from "../components/ImageBanner"
+import fiberNetwork from "../assets/images/fiber-network.webp"
 
 const icons = { MailWarning, CloudCog, ShieldAlert, Laptop, Settings2, ClipboardCheck, Layers }
 
@@ -40,6 +42,17 @@ export default function SolutionsPage() {
               {solutionsPage.intro}
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="relative pb-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ImageBanner
+            src={fiberNetwork}
+            alt="Fiber optic network cables"
+            caption="Built on solid infrastructure"
+            body="Every solution here runs on the same principle: protect the connections your business depends on."
+          />
         </div>
       </section>
 

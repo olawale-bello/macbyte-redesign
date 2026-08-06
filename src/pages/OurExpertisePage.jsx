@@ -14,6 +14,8 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { expertisePage } from "../content"
+import ImageBanner from "../components/ImageBanner"
+import technicianDatacenter from "../assets/images/technician-datacenter.webp"
 
 const areaIcons = { ClipboardCheck, ShieldCheck, CloudCog, ShieldAlert, Settings2 }
 const stepIcons = { Search, Compass, Settings2, TrendingUp }
@@ -43,6 +45,17 @@ export default function OurExpertisePage() {
               {expertisePage.intro}
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="relative pb-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ImageBanner
+            src={technicianDatacenter}
+            alt="Technician working on a laptop in a data center"
+            caption="Hands-on, not just theoretical"
+            body="Our expertise is built in the infrastructure itself — assessing, configuring, and supporting systems day to day."
+          />
         </div>
       </section>
 

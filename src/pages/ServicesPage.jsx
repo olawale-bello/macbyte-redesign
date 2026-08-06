@@ -16,6 +16,8 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { servicesPage } from "../content"
+import ImageBanner from "../components/ImageBanner"
+import threatDetection from "../assets/images/threat-detection.webp"
 
 const consultingIcons = { Compass, CloudCog, ShieldCheck, BarChart3, Settings2, Sparkles }
 const collabIcons = { Handshake, Users2, GraduationCap }
@@ -75,6 +77,17 @@ export default function ServicesPage() {
               </Link>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      <section className="relative pb-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ImageBanner
+            src={threatDetection}
+            alt="Security analyst monitoring threat detection dashboards"
+            caption="Consulting backed by real monitoring"
+            body="Our recommendations come from teams who watch threat activity every day, not just a slide deck."
+          />
         </div>
       </section>
 
