@@ -59,7 +59,7 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative overflow-hidden rounded-3xl border border-(--glass)/10 p-8"
+              className="relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-3xl border border-(--glass)/10 p-8"
             >
               <img
                 src={customerSupport}
