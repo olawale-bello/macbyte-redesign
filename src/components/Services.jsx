@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { servicesIntro, services } from "../content"
+import supervisorServerHub from "../assets/images/supervisor-server-hub.webp"
 
 const icons = {
   MailWarning,
@@ -74,34 +75,48 @@ export default function Services() {
                 transition={{ duration: 0.4, delay: (i % 4) * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 className={`group relative flex flex-col overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${spans[i]} ${
                   featured
-                    ? "justify-center border-(--glass)/10 bg-gradient-to-br from-primary/15 via-primary-2/10 to-accent/10 hover:border-(--glass)/20"
+                    ? "justify-end border-(--glass)/10 hover:border-(--glass)/20"
                     : "justify-between border-(--glass)/8 bg-(--glass)/[0.03] hover:border-(--glass)/20 hover:bg-(--glass)/[0.06]"
                 }`}
               >
+                {featured && (
+                  <>
+                    <img
+                      src={supervisorServerHub}
+                      alt="IT supervisor overseeing a server hub"
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
+                  </>
+                )}
+
                 <div
                   aria-hidden
                   className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
                 />
 
                 <div
-                  className={`flex items-center justify-center rounded-xl border border-(--glass)/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2 transition-transform duration-300 group-hover:scale-110 ${
-                    featured ? "h-14 w-14" : "h-12 w-12"
+                  className={`flex items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 ${
+                    featured
+                      ? "h-14 w-14 border border-white/20 bg-white/10 text-white backdrop-blur-md"
+                      : "h-12 w-12 border border-(--glass)/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2"
                   }`}
                 >
                   <Icon className={featured ? "h-7 w-7" : "h-6 w-6"} strokeWidth={1.75} />
                 </div>
 
-                <div className={featured ? "mt-6" : "mt-5"}>
+                <div className={featured ? "relative mt-6" : "mt-5"}>
                   <h3
-                    className={`font-semibold leading-snug text-fg ${
-                      featured ? "text-xl" : "text-base"
+                    className={`font-semibold leading-snug ${
+                      featured ? "text-xl text-white" : "text-base text-fg"
                     }`}
                   >
                     {service.title}
                   </h3>
                   <p
-                    className={`mt-2 leading-relaxed text-fg-muted ${
-                      featured ? "text-sm" : "text-sm line-clamp-2"
+                    className={`mt-2 leading-relaxed ${
+                      featured ? "text-sm text-white/80" : "text-sm text-fg-muted line-clamp-2"
                     }`}
                   >
                     {service.description}
