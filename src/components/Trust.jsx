@@ -16,16 +16,16 @@ export default function Trust() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="mx-auto max-w-2xl text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {trust.eyebrow}
           </div>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-fg sm:text-4xl">
             {trust.headline}
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-fg-muted">{trust.body}</p>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-fg-muted">{trust.body}</p>
         </motion.div>
 
         {/* Pillars */}

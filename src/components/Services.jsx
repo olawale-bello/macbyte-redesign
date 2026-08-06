@@ -33,9 +33,9 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="mx-auto max-w-2xl text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             {servicesIntro.eyebrow}
           </div>
@@ -52,7 +52,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-wrap gap-3"
+          className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           {services.map((service) => {
             const Icon = icons[service.icon]
@@ -68,11 +68,11 @@ export default function Services() {
           })}
         </motion.div>
 
-        <p className="mt-8 max-w-2xl text-sm font-medium text-fg-muted">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm font-medium text-fg-muted">
           {servicesIntro.closing}
         </p>
 
-        <div className="mt-6">
+        <div className="mt-6 flex justify-center">
           <Link
             to={servicesIntro.learnMore.href}
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-2 px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"

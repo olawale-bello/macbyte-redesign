@@ -11,15 +11,17 @@ const images = {
 export default function Visuals() {
   return (
     <section className="relative py-24 lg:py-32">
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-[440px] -translate-y-1/2 bg-accent/10 blur-[140px]" />
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="mx-auto max-w-2xl text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-fg-muted backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {visuals.eyebrow}
           </div>
