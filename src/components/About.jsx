@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
-import { Target, TrendingUp, CheckCircle2 } from "lucide-react"
+import { Link } from "react-router-dom"
+import { CheckCircle2, ArrowRight } from "lucide-react"
 import { about } from "../content"
 
 export default function About() {
@@ -23,7 +24,6 @@ export default function About() {
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-fg-muted">{about.mission}</p>
         </motion.div>
 
-        {/* Expertise tags */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,39 +42,14 @@ export default function About() {
           ))}
         </motion.div>
 
-        {/* Approach + Results */}
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-xl"
+        <div className="mt-8">
+          <Link
+            to="/our-expertise"
+            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-2 px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2">
-              <Target className="h-5 w-5" strokeWidth={1.75} />
-            </div>
-            <h3 className="mt-5 text-lg font-semibold text-fg">Our Approach</h3>
-            <p className="mt-2 text-sm leading-relaxed text-fg-muted">{about.approach}</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-8 backdrop-blur-xl"
-          >
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/15 blur-[100px]"
-            />
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-accent/20 to-primary-2/20 text-accent">
-              <TrendingUp className="h-5 w-5" strokeWidth={1.75} />
-            </div>
-            <h3 className="mt-5 text-lg font-semibold text-fg">Our Results</h3>
-            <p className="mt-2 text-sm leading-relaxed text-fg-muted">{about.results}</p>
-          </motion.div>
+            See our full expertise
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </div>
     </section>

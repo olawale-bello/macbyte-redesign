@@ -124,6 +124,17 @@ export default function ServicesPage() {
                         <p className="mt-3 text-sm leading-relaxed text-fg-muted">
                           {item.detail}
                         </p>
+                        <ul className="mt-4 space-y-2.5">
+                          {item.benefits.map((benefit) => (
+                            <li
+                              key={benefit}
+                              className="flex gap-2.5 text-sm leading-relaxed text-fg-muted"
+                            >
+                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2} />
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
                       </motion.div>
                     )}
                   </AnimatePresence>

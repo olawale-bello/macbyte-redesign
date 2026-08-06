@@ -11,9 +11,9 @@ export const brand = {
 
 export const nav = {
   links: [
-    { label: "Solutions", href: "#services" },
+    { label: "Solutions", href: "/solutions", route: true },
     { label: "Services", href: "/services", route: true },
-    { label: "Our Expertise", href: "#about" },
+    { label: "Our Expertise", href: "/our-expertise", route: true },
     { label: "About Us", href: "/about-us", route: true },
     { label: "Reviews", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
@@ -37,8 +37,8 @@ export const servicesIntro = {
     "We provide expert Cybersecurity solutions for your businesses including Endpoint, Network and Cloud protection. At MacBytesSecurity, we provide expert cybersecurity solutions to keep Canadian businesses safe.",
   closing: "Cyber threats are always evolving; stay ahead with MacBytes Security.",
   learnMore: {
-    text: "Explore our full consulting services",
-    href: "/services",
+    text: "Explore all our solutions",
+    href: "/solutions",
   },
 }
 
@@ -81,6 +81,113 @@ export const services = [
   },
 ]
 
+// Dedicated Solutions page — the same 7 real services from the homepage,
+// organized by use case with added benefit detail.
+export const solutionsPage = {
+  eyebrow: "Solutions",
+  headline: "Cybersecurity solutions organized around how you actually work",
+  intro:
+    "We provide expert Cybersecurity solutions for your businesses including Endpoint, Network and Cloud protection. Rather than a flat list, here's how each solution fits into the bigger picture of keeping your business protected.",
+  groups: [
+    {
+      title: "Stop threats before they reach you",
+      description: "The first line of defense: keeping harmful traffic and messages out entirely.",
+      items: [
+        {
+          title: "Email Protection & Gateway Security",
+          description: "Blocks phishing scams and prevents harmful emails from reaching you.",
+          icon: "MailWarning",
+          benefits: [
+            "Filters phishing and malicious attachments before they reach inboxes",
+            "Reduces the risk of credential theft and business email compromise",
+            "Keeps your team focused instead of second-guessing every email",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Secure your infrastructure",
+      description: "Hardening the networks and devices your business runs on every day.",
+      items: [
+        {
+          title: "Cloud & Network Security",
+          description: "Strengthens your infrastructure to stop malicious activities.",
+          icon: "CloudCog",
+          benefits: [
+            "Hardens network perimeters against unauthorized access",
+            "Monitors traffic for unusual or malicious activity",
+            "Scales with your infrastructure as your business grows",
+          ],
+        },
+        {
+          title: "Endpoint Protection",
+          description: "Secures all devices, from computers to phones, against cyber threats.",
+          icon: "Laptop",
+          benefits: [
+            "Covers laptops, desktops, and mobile devices from a single view",
+            "Detects and contains threats at the device level",
+            "Reduces the impact of any single compromised device",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Find weaknesses first",
+      description: "Testing your defenses before someone else does.",
+      items: [
+        {
+          title: "Vulnerability Assessment & Penetration Testing (VAPT)",
+          description:
+            "Identifies and fixes security weaknesses before attackers can exploit them, ensuring your cybersecurity solutions are robust.",
+          icon: "ShieldAlert",
+          benefits: [
+            "Uncovers exploitable weaknesses before attackers do",
+            "Prioritized remediation guidance, not just a list of findings",
+            "Validates that your existing defenses actually hold up",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Run IT with confidence",
+      description: "Day-to-day operations and the standards they need to meet.",
+      items: [
+        {
+          title: "Managed IT Services",
+          description: "Expert guidance to optimize and protect your business's technology.",
+          icon: "Settings2",
+          benefits: [
+            "One team accountable for uptime, support, and performance",
+            "Frees your staff to focus on the business, not the break/fix",
+            "Predictable support instead of reactive firefighting",
+          ],
+        },
+        {
+          title: "Compliance & Governance",
+          description: "Ensures organizations meet industry security standards and regulatory frameworks.",
+          icon: "ClipboardCheck",
+          benefits: [
+            "Maps your controls to the standards your industry expects",
+            "Reduces audit stress with organized documentation",
+            "Turns compliance into an ongoing practice, not a scramble",
+          ],
+        },
+      ],
+    },
+  ],
+  capstone: {
+    title: "End-to-End Security",
+    description: "Complete protection to keep your business safe at every level.",
+    icon: "Layers",
+  },
+  closing: "Cyber threats are always evolving; stay ahead with MacBytes Security.",
+  cta: {
+    body: "Not sure where to start? Book a free consultation and we'll help you find the right fit.",
+    label: "Book a Consultation",
+    href: "/#booking",
+  },
+}
+
 // Dedicated Services page — sourced from macbytesecurity.com/services.
 export const servicesPage = {
   eyebrow: "In a Nutshell",
@@ -105,6 +212,11 @@ export const servicesPage = {
       detail:
         "Our team of experts will assess your current IT infrastructure, conduct a vulnerability assessment to identify gaps and opportunities, and provide tailored recommendations for improvement.",
       icon: "Compass",
+      benefits: [
+        "A clear roadmap tied to your actual business goals",
+        "Vulnerability assessment included, not billed separately",
+        "Recommendations prioritized by impact, not just a long list",
+      ],
     },
     {
       title: "Cloud Computing Services",
@@ -113,6 +225,11 @@ export const servicesPage = {
       detail:
         "Our team has extensive experience in designing and implementing cloud solutions within Azure, AWS and Nutanix.",
       icon: "CloudCog",
+      benefits: [
+        "Hands-on experience across Azure, AWS, and Nutanix",
+        "Migrations and implementations built with security in from day one",
+        "Infrastructure that scales as your business grows",
+      ],
     },
     {
       title: "Cybersecurity Consulting",
@@ -121,6 +238,11 @@ export const servicesPage = {
       detail:
         "Our team of experts specializes in XDR, NDR and MDR all within a centralized data system so that you can stay ahead of the threat.",
       icon: "ShieldCheck",
+      benefits: [
+        "XDR, NDR, and MDR specialists working from one centralized view",
+        "Faster detection by correlating signals across your environment",
+        "Guidance that stays ahead of the threat, not just reacts to it",
+      ],
     },
     {
       title: "Data Analytics Consulting",
@@ -129,6 +251,11 @@ export const servicesPage = {
       detail:
         "Our team of experts, with extensive experience in data analytics, data warehousing, and business intelligence, are happy to digest business data to facilitate real growth.",
       icon: "BarChart3",
+      benefits: [
+        "Turns raw business data into decisions you can act on",
+        "Data warehousing and BI expertise under one roof",
+        "Security built into how your data is handled, not bolted on after",
+      ],
     },
     {
       title: "Managed IT Services",
@@ -137,6 +264,11 @@ export const servicesPage = {
       detail:
         "Our team of experts can handle everything from day-to-day support to strategic planning and implementation, ensuring smooth business operations to drive profitability.",
       icon: "Settings2",
+      benefits: [
+        "Day-to-day support and long-term strategic planning, from one team",
+        "Reduced downtime through proactive infrastructure support",
+        "Costs that are predictable instead of reactive and spiky",
+      ],
     },
     {
       title: "Digital Transformation Consulting",
@@ -145,6 +277,11 @@ export const servicesPage = {
       detail:
         "In today's fast-paced digital economy, success depends on agility, data intelligence, and secure innovation. Our consultants partner with your leadership to align technology initiatives with business objectives, streamline workflows, and integrate modern solutions.",
       icon: "Sparkles",
+      benefits: [
+        "Modernization roadmaps aligned to your business objectives",
+        "Consultants who partner with leadership, not just IT",
+        "Emerging technology adopted securely, not recklessly",
+      ],
     },
   ],
   collaborationsTitle: "Business Collaborations",
@@ -212,6 +349,85 @@ export const about = {
     "We believe that every business is unique, which is why a customized approach to IT consulting is essential. We take the time to understand our clients' specific needs and challenges, allowing us to develop tailored solutions, including advanced cybersecurity solutions, effective endpoint protection, and comprehensive vulnerability assessments that meet their unique requirements.",
   results:
     "We are committed to delivering results for our clients through advanced cybersecurity solutions. Whether it's optimizing their IT infrastructure, enhancing their cybersecurity posture with robust endpoint protection, or conducting a thorough vulnerability assessment to streamline their operations, we work tirelessly to ensure that our clients achieve their goals and see measurable results.",
+}
+
+// Dedicated Our Expertise page — expands the homepage's "About Macbyte Security"
+// block (mission, expertise, approach, results) into a fuller page. Methodology
+// steps are a structured elaboration of the real approach/results copy, not new claims.
+export const expertisePage = {
+  eyebrow: "Our Expertise",
+  headline: "We empower and help businesses build trust",
+  intro: about.mission,
+  expertiseAreas: [
+    {
+      title: "Cybersecurity Compliance & Governance",
+      description:
+        "Aligning your security program with the regulatory frameworks and standards that apply to your business, so compliance is a byproduct of good practice rather than a separate scramble.",
+      icon: "ClipboardCheck",
+    },
+    {
+      title: "Managed Security Operations",
+      description:
+        "Ongoing monitoring, detection, and response so threats are caught and contained before they become incidents.",
+      icon: "ShieldCheck",
+    },
+    {
+      title: "Network & Infrastructure Security",
+      description:
+        "Hardening the systems your business runs on — from firewalls to cloud environments — against unauthorized access and disruption.",
+      icon: "CloudCog",
+    },
+    {
+      title: "Penetration Testing & Vulnerability Management",
+      description:
+        "Simulating real attacks to find weaknesses first, then tracking remediation until they're closed.",
+      icon: "ShieldAlert",
+    },
+    {
+      title: "IT & Infrastructure Support",
+      description:
+        "Day-to-day technical support that keeps systems running so your team isn't interrupted by IT issues.",
+      icon: "Settings2",
+    },
+  ],
+  methodology: {
+    eyebrow: "How We Work",
+    headline: "A customized approach, from first conversation to measurable results",
+    steps: [
+      {
+        title: "Assess",
+        description:
+          "We assess your current IT infrastructure and conduct a vulnerability review to understand where you actually stand.",
+        icon: "Search",
+      },
+      {
+        title: "Design",
+        description:
+          "We take the time to understand your specific needs and challenges, then develop tailored solutions — not a one-size-fits-all package.",
+        icon: "Compass",
+      },
+      {
+        title: "Implement",
+        description:
+          "Our team puts the plan into action across your infrastructure, endpoints, and processes.",
+        icon: "Settings2",
+      },
+      {
+        title: "Support & Measure",
+        description:
+          "We stay engaged, working tirelessly to ensure clients achieve their goals and see measurable results.",
+        icon: "TrendingUp",
+      },
+    ],
+  },
+  approach: about.approach,
+  results: about.results,
+  leadershipTeaser: {
+    body:
+      "Our approach is shaped by leadership with a background in military service and law enforcement, principles carried into every engagement.",
+    linkText: "Meet the team behind Macbyte",
+    href: "/about-us",
+  },
 }
 
 export const trustPillars = [
@@ -313,7 +529,9 @@ export const footer = {
   copyright: "Copyright © 2026 MacbyteSecurity - All Rights Reserved.",
   links: [
     { label: "Home", href: "/", route: true },
+    { label: "Solutions", href: "/solutions", route: true },
     { label: "Services", href: "/services", route: true },
+    { label: "Our Expertise", href: "/our-expertise", route: true },
     { label: "About Us", href: "/about-us", route: true },
   ],
 }

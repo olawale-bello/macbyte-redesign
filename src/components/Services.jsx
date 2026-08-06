@@ -22,9 +22,6 @@ const icons = {
   Layers,
 }
 
-const gridServices = services.filter((s) => s.icon !== "Layers")
-const capstone = services.find((s) => s.icon === "Layers")
-
 export default function Services() {
   return (
     <section id="services" className="relative py-24 lg:py-32">
@@ -50,67 +47,35 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {gridServices.map((service, i) => {
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-10 flex flex-wrap gap-3"
+        >
+          {services.map((service) => {
             const Icon = icons[service.icon]
             return (
-              <motion.div
+              <span
                 key={service.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.4, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] hover:shadow-glow"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-fg backdrop-blur-xl transition-colors duration-200 hover:border-white/20 hover:bg-white/[0.08]"
               >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
-                />
-
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2 transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-6 w-6" strokeWidth={1.75} />
-                </div>
-
-                <h3 className="mt-5 text-base font-semibold leading-snug text-fg">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                  {service.description}
-                </p>
-              </motion.div>
+                <Icon className="h-4 w-4 text-primary-2" strokeWidth={1.75} />
+                {service.title}
+              </span>
             )
           })}
-        </div>
+        </motion.div>
 
-        {/* Capstone: End-to-End Security */}
-        {capstone && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mt-5 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-primary/15 via-primary-2/10 to-accent/10 p-6 backdrop-blur-xl sm:flex sm:items-center sm:gap-6 sm:p-8"
-          >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary-2 text-white shadow-glow">
-              <Layers className="h-6 w-6" strokeWidth={1.75} />
-            </div>
-            <div className="mt-4 sm:mt-0">
-              <h3 className="text-base font-semibold text-fg">{capstone.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-fg-muted">
-                {capstone.description}
-              </p>
-            </div>
-          </motion.div>
-        )}
-
-        <p className="mt-10 text-center text-sm font-medium text-fg-muted">
+        <p className="mt-8 max-w-2xl text-sm font-medium text-fg-muted">
           {servicesIntro.closing}
         </p>
 
-        <div className="mt-6 text-center">
+        <div className="mt-6">
           <Link
             to={servicesIntro.learnMore.href}
-            className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-fg backdrop-blur transition-colors duration-200 hover:border-white/25 hover:bg-white/10"
+            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-2 px-6 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
           >
             {servicesIntro.learnMore.text}
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
