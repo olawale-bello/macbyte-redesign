@@ -1,7 +1,24 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { CheckCircle2, ArrowRight } from "lucide-react"
-import { about } from "../content"
+import {
+  ClipboardCheck,
+  ShieldCheck,
+  CloudCog,
+  ShieldAlert,
+  Settings2,
+  ArrowRight,
+} from "lucide-react"
+import { about, expertisePage } from "../content"
+
+const icons = { ClipboardCheck, ShieldCheck, CloudCog, ShieldAlert, Settings2 }
+
+const spans = [
+  "col-span-2", // Compliance & Governance (featured)
+  "col-span-1", // Managed Security Operations
+  "col-span-1", // Network & Infrastructure Security
+  "col-span-2", // Penetration Testing & Vulnerability Management (long title)
+  "col-span-2", // IT & Infrastructure Support
+]
 
 export default function About() {
   return (
@@ -26,23 +43,56 @@ export default function About() {
           <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-fg-muted">{about.mission}</p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3"
-        >
-          {about.expertise.map((item) => (
-            <span
-              key={item}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-fg backdrop-blur-xl transition-colors duration-200 hover:border-white/20 hover:bg-white/[0.08]"
-            >
-              <CheckCircle2 className="h-3.5 w-3.5 text-accent" strokeWidth={2} />
-              {item}
-            </span>
-          ))}
-        </motion.div>
+        <div className="mt-12 grid grid-cols-2 auto-rows-[minmax(150px,auto)] gap-4 sm:grid-cols-4">
+          {expertisePage.expertiseAreas.map((area, i) => {
+            const Icon = icons[area.icon]
+            const featured = i === 0
+            return (
+              <motion.div
+                key={area.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: (i % 4) * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${spans[i]} ${
+                  featured
+                    ? "border-white/10 bg-gradient-to-br from-primary-2/15 via-primary/10 to-accent/10 hover:border-white/20"
+                    : "border-white/8 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]"
+                }`}
+              >
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-primary-2/20 to-accent/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
+                />
+
+                <div
+                  className={`flex items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2 transition-transform duration-300 group-hover:scale-110 ${
+                    featured ? "h-14 w-14" : "h-12 w-12"
+                  }`}
+                >
+                  <Icon className={featured ? "h-7 w-7" : "h-6 w-6"} strokeWidth={1.75} />
+                </div>
+
+                <div className={featured ? "mt-6" : "mt-5"}>
+                  <h3
+                    className={`font-semibold leading-snug text-fg ${
+                      featured ? "text-xl" : "text-base"
+                    }`}
+                  >
+                    {area.title}
+                  </h3>
+                  <p
+                    className={`mt-2 leading-relaxed text-fg-muted ${
+                      featured ? "text-sm" : "text-sm line-clamp-2"
+                    }`}
+                  >
+                    {area.description}
+                  </p>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
 
         <div className="mt-8 flex justify-center">
           <Link

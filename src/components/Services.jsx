@@ -22,6 +22,20 @@ const icons = {
   Layers,
 }
 
+const capstone = services.find((s) => s.icon === "Layers")
+const rest = services.filter((s) => s.icon !== "Layers")
+const bentoItems = [capstone, ...rest]
+
+const spans = [
+  "col-span-2 row-span-1 sm:col-span-2 sm:row-span-2", // End-to-End Security (featured)
+  "col-span-1", // Email Protection
+  "col-span-1", // Cloud & Network
+  "col-span-2", // VAPT (long title)
+  "col-span-1", // Endpoint Protection
+  "col-span-1", // Managed IT
+  "col-span-2", // Compliance & Governance
+]
+
 export default function Services() {
   return (
     <section id="services" className="relative py-24 lg:py-32">
@@ -47,28 +61,58 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
-        >
-          {services.map((service) => {
+        <div className="mt-12 grid grid-cols-2 auto-rows-[minmax(150px,auto)] gap-4 sm:grid-cols-4">
+          {bentoItems.map((service, i) => {
             const Icon = icons[service.icon]
+            const featured = i === 0
             return (
-              <span
+              <motion.div
                 key={service.title}
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-fg backdrop-blur-xl transition-colors duration-200 hover:border-white/20 hover:bg-white/[0.08]"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: (i % 4) * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${spans[i]} ${
+                  featured
+                    ? "justify-center border-white/10 bg-gradient-to-br from-primary/15 via-primary-2/10 to-accent/10 hover:border-white/20"
+                    : "justify-between border-white/8 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]"
+                }`}
               >
-                <Icon className="h-4 w-4 text-primary-2" strokeWidth={1.75} />
-                {service.title}
-              </span>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
+                />
+
+                <div
+                  className={`flex items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-primary/20 to-primary-2/20 text-primary-2 transition-transform duration-300 group-hover:scale-110 ${
+                    featured ? "h-14 w-14" : "h-12 w-12"
+                  }`}
+                >
+                  <Icon className={featured ? "h-7 w-7" : "h-6 w-6"} strokeWidth={1.75} />
+                </div>
+
+                <div className={featured ? "mt-6" : "mt-5"}>
+                  <h3
+                    className={`font-semibold leading-snug text-fg ${
+                      featured ? "text-xl" : "text-base"
+                    }`}
+                  >
+                    {service.title}
+                  </h3>
+                  <p
+                    className={`mt-2 leading-relaxed text-fg-muted ${
+                      featured ? "text-sm" : "text-sm line-clamp-2"
+                    }`}
+                  >
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
             )
           })}
-        </motion.div>
+        </div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-sm font-medium text-fg-muted">
+        <p className="mx-auto mt-10 max-w-2xl text-center text-sm font-medium text-fg-muted">
           {servicesIntro.closing}
         </p>
 
