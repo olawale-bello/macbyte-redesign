@@ -1,9 +1,8 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { Quote, Users2, ShieldCheck, Fingerprint, Compass, Medal, ArrowRight } from "lucide-react"
+import { Quote, Users2, Medal, ArrowRight } from "lucide-react"
 import { aboutPage } from "../content"
-
-const pillarIcons = [ShieldCheck, Fingerprint, Compass]
+import PillarCards from "../components/PillarCards"
 
 export default function AboutUsPage() {
   return (
@@ -72,27 +71,7 @@ export default function AboutUsPage() {
             The principles that guide every engagement
           </motion.h2>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {aboutPage.pillars.map((pillar, i) => {
-              const Icon = pillarIcons[i]
-              return (
-                <motion.div
-                  key={pillar.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.4, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  className="rounded-2xl border border-(--glass)/8 bg-(--glass)/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 hover:border-(--glass)/20 hover:bg-(--glass)/[0.06]"
-                >
-                  <Icon className="h-6 w-6 text-accent" strokeWidth={1.75} />
-                  <h3 className="mt-4 text-base font-semibold text-fg">{pillar.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                    {pillar.description}
-                  </p>
-                </motion.div>
-              )
-            })}
-          </div>
+          <PillarCards pillars={aboutPage.pillars} className="mt-10" />
         </div>
       </section>
 
